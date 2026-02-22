@@ -1,0 +1,31 @@
+# MLOps Pipeline Docker Image
+# MetaStackerBandit Project - Technical Assessment
+# Base image: Python 3.9 slim for minimal footprint
+
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Prevent Python from writing pyc files and buffering stdout/stderr
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Copy requirements first for better layer caching
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application files
+COPY run.py .
+COPY config.yaml .
+COPY data.csv .
+
+# Run the pipeline
+# Executes with default paths matching the assessment specification
+CMD ["python", "run.py", \
+     "--input", "data.csv", \
+     "--config", "config.yaml", \
+     "--output", "metrics.json", \
+     "--log-file", "run.log"]
