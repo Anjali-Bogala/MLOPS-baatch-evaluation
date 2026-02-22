@@ -1,0 +1,11 @@
+# MLOps Pipeline Configuration
+# MetaStackerBandit Project - Technical Assessment
+
+# Random seed for reproducibility
+seed: 42
+
+# Rolling window size for moving average calculation
+window: 5
+
+# Pipeline version identifier
+version: "v1"
