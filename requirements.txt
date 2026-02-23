@@ -1,6 +1,6 @@
 # Core Data Processing
-pandas>=1.5.0
-numpy>=1.23.0
+pandas==2.1.4
+numpy==1.24.3
 
 # Configuration Management
-PyYAML>=6.0
+PyYAML==6.0.1
