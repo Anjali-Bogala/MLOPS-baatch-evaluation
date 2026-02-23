@@ -1,5 +1,4 @@
 # MLOps Pipeline Configuration
-# MetaStackerBandit Project - Technical Assessment
 
 # Random seed for reproducibility
 seed: 42
