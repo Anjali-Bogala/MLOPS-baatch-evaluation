@@ -8,3 +8,6 @@ window: 5
 
 # Pipeline version identifier
 version: "v1"
+
+# Threshold
+threshold: 0.7
